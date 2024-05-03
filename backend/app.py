@@ -38,6 +38,14 @@ def submit():
 
     return 'Data successfully submitted to MySQL'
 
+@app.route('/delete/<int:id>')
+def delete(id):
+    cursor = mydb.cursor()
+    cursor.execute("DELETE FROM customers WHERE id = %s", (id,))
+    mydb.commit()
+    cursor.close()
+    return redirect(url_for('form'))
+
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=81)
 
