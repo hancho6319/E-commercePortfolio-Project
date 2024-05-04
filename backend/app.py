@@ -33,7 +33,7 @@ def submit():
     sql = "INSERT INTO customers (surname, other_name, last_name, email, phone_number, created_time_date, product_id, nationality, state_province, address) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     val = (surname, other_name, last_name, email, phone_number, created_time_date, product_id, nationality, state_province, address)
     cursor.execute(sql, val)
-    mydb.commit()
+    mydb.commit(s)
     cursor.close()
 
     return 'Data successfully submitted to MySQL'

@@ -37,6 +37,40 @@
 
         <input type="submit" value="Submit">
     </form>
+    <hr>
+
+    <h1>Customer List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Surname</th>
+                <th>Other Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Created Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer[0] }}</td>
+                <td>{{ customer[1] }}</td>
+                <td>{{ customer[2] }}</td>
+                <td>{{ customer[3] }}</td>
+                <td>{{ customer[4] }}</td>
+                <td>{{ customer[5] }}</td>
+                <td>{{ customer[6] }}</td>
+                <td>
+                    <a href="{{ url_for('update', id=customer[0]) }}">Update</a>
+                    <a href="{{ url_for('delete', id=customer[0]) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
 
