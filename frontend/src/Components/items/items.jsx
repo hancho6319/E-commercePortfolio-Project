@@ -1,21 +1,18 @@
 import React from 'react'
 import './items.css'
+import { Link } from 'react-router-dom'
 
-const items = (props) => {
+const Items = (props) => {
   return (
-    <div className='item'>
-        <img src={props.image} alt='' />
-        <p>{props.name}</p>
-        <div className='item-prices'>
-            <div className='item-price-new'>
-                {props.new_price}
-            </div>
-            <div className='item-price-old'>
-                {props.old_price}
-            </div>
+        <div className='item'>
+            <h2 className='name'>{props.name}</h2>
+            <img src={props.image} alt='' />
+            <p className='sex'>{props.category}</p>
+            <p className='price'>&#x20A6;{(props.price).toLocaleString()}</p>
+            <hr/>
+            <Link to='/buy'><button class="buy"><span>Buy</span></button></Link>
         </div>
-    </div>  
     )
 }
 
-export default items
+export default Items

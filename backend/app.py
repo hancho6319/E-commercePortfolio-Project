@@ -18,25 +18,27 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    surname = request.form['surname']
-    other_name = request.form['other_name']
-    last_name = request.form['last_name']
-    email = request.form['email']
-    phone_number = request.form['phone_number']
+    data = request.json()
+    surname = data.get('surname')
+    otherName = data.get('otherName')
+    firstName = data.get('firstName')
+    email = data.get('email')
+    phone = data.get('phone')
     created_time_date = datetime.now()
-    product_id = request.form['product_id']
-    nationality = request.form['nationality']
-    state_province = request.form['state_province']
-    address = request.form['address']
+    nationality = data.get('nationality')
+    state = data.get('state')
+    localGovt = data.get('localGovt')
+    address = data.get('address')
+    password = data.get('password')
 
     cursor = mydb.cursor()
-    sql = "INSERT INTO customers (surname, other_name, last_name, email, phone_number, created_time_date, product_id, nationality, state_province, address) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    val = (surname, other_name, last_name, email, phone_number, created_time_date, product_id, nationality, state_province, address)
+    sql = "INSERT INTO customers (surname, otherName, firstName, email, phone, created_time_date, nationality, state, localGovt, address, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    val = (surname, otherName, firstName, email, phone, created_time_date, nationality, state, localGovt, address, password)
     cursor.execute(sql, val)
-    mydb.commit(s)
+    mydb.commit()
     cursor.close()
 
-    return 'Data successfully submitted to MySQL'
+    return f'{firstName} {surname} {otherName} is Successfully Submited'
 
 @app.route('/delete/<int:id>')
 def delete(id):
@@ -47,5 +49,5 @@ def delete(id):
     return redirect(url_for('form'))
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=81)
+    app.run(debug=True, host="0.0.0.0")
 

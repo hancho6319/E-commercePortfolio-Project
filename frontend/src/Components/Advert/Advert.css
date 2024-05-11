@@ -1,5 +1,11 @@
 /* Style for the Adverts */
 
+.adds p{
+    padding: 10px 10px;
+    display: flex;
+    color: darkgray;
+}
+
 .gallery-container {
     width: 100%;
     overflow: hidden;

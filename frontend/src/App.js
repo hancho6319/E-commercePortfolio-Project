@@ -3,8 +3,9 @@ import { Navbar } from './Components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Shop from './Pages/shop';
 import ShopCategory from './Pages/shopcategory';
-import Login from './Pages/login';
+import SignUp from './Pages/signup';
 import Cart from './Pages/cart';
+import Footer from './Components/footer/footer'
 
 function App() {
   return (
@@ -16,12 +17,14 @@ function App() {
         <Route path='/males' element={<ShopCategory/>} category='males'/>
         <Route path='/females' element={<ShopCategory/>} category='females'/>
         <Route path='/accessories' element={<ShopCategory/>} category='accessories'/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/product' element={<Product/>}>
+          <Route path=':productId' element={<Product/>}/>
+        </Route>
+        <Route path='/signup' element={<SignUp/>}/>
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
+      <Footer/>
       </BrowserRouter>
-      
-      
     </div>
   );
 }

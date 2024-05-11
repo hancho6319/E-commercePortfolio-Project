@@ -9,16 +9,19 @@ import Image6 from '../Assets/images6.png'
 
 const Advert = () => {
   return (
-    <div className='gallery-container'>
-      <div className='marquee-container'>
-        <img src={Image1}/>
-        <img src={Image2}/>
-        <img src={Image3}/>
-        <img src={Image4}/>
-        <img src={Image5}/>
-        <img src={Image6}/>
+    <divc className="adds">
+      <p>NO. 75C GWALANDI HOUSE IBB WAY, KWARI MARKET KANO, KANO STATE, NIGERIA...</p>
+      <div className='gallery-container'>
+        <div className='marquee-container'>
+          <img alt='' src={Image1}/>
+          <img alt='' src={Image2}/>
+          <img alt='' src={Image3}/>
+          <img alt='' src={Image4}/>
+          <img alt='' src={Image5}/>
+          <img alt='' src={Image6}/>
+        </div>
       </div>
-    </div>
+    </divc>
   )
 }
 
