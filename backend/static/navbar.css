@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    background: rgb(155, 156, 157);
+}
+
+.varclick {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: black;
+    height: 30px;
+    width: auto;
+}
+
+.varclick a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin: 0 20px 0 20px;
+}
+
+.varclick a:hover{
+    color: blue;
+    font-size: 30px;
+}
+
+.copy_right p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.logo p {
+    color: black;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.navbar h1 {
+    color: rgb(227, 8, 8);
+    font-size: 73px;
+    font-weight: 800;
+    right: 30px;
+}
+
+.customer_list {
+    height: auto;
+    width: 100%;
+    padding: 30px 0 30px;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+}

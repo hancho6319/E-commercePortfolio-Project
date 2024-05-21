@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='navbar.css')}}"/>
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{url_for('static', filename='images/hancho-logo.jpeg')}}"/>
+            <p>HANCHO</p>
+        </div>
+        <h1>Admin</h1>
+    </div>
+    <div class="varclick">
+        <a href="{{url_for('display')}}">All Cusomers</a>
+        <a href="{{url_for('display')}}">Products</a>
+        <a href="{{url_for('display')}}">Sold</a>
+        <a href="{{url_for('display')}}">Feedbacks</a>
+    </div>
+    {% block body %} {% endblock %}
+    <div class="footer">
+        <div class='copy_right'>
+            <hr/>
+            <p>Copyright @ 2024 - All Right Reserved</p>
+          </div>
+    </div>
+</body>
+</html>
