@@ -9,6 +9,7 @@ import whatsapp from '../Assets/Whatsapp-Icon-PNG 2873.png'
 const footer = () => {
   return (
     <div className='footer'>
+      {/**This is the footer that contain the details at the button of the page */}
         <div className='footer-logo'>
             <img src={footer_logo} alt=''/>
             <p>HANCHO</p>

@@ -10,6 +10,7 @@ import Footer from './Components/footer/footer'
 function App() {
   return (
     <div className="App">
+      {/**This is the main file, while all the routing take place */}
       <BrowserRouter>
       <Navbar/>
       <Routes>
